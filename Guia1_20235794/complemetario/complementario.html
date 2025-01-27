@@ -3,9 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Aristocats</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+      screens: {
+        sm: '-80px',
+        md: '768px',
+        lg: '976px',
+        xl: '1440px',
+      }
+      }
+        }
+      </script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2 {
+            font-family: 'Pacifico', cursive;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+    </style>
 </head>
-<body>
-    
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-gray-800 text-white py-4 px-6 md:px-12 ">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl md:text-4xl font-bold">Los Aristogatos</h1>
+            <nav class="space-x-4">
+                <a href="#about" class="hover:underline">About</a>
+                <a href="#personajes" class="hover:underline">Personajes</a>
+                <a href="#video" class="hover:underline">Imagenes</a>
+                <a href="#funfacts" class="hover:underline">Fun Facts</a>
+            </nav>
+        </div>
+    </header>
+
+        <!-- Hero-->
+        <section class="relative bg-cover bg-center h-96" style="background-image: url('./img/imagen.jpg')">
+            <div class="bg-black bg-opacity-80 h-full flex items-center justify-center">
+                <h2 class="text-white text-4xl md:text-6xl font-bold">Los Aristogatos</h2>
+            </div>
+        </section>
+
+    <!-- Sobre la pelicula -->
+    <section id="about" class="py-8 px-6 md:px-12">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Sobre la Película</h2>
+            <p class="text-lg md:text-xl text-gray-700">
+                Los Aristogatos (título original en inglés: The Aristocats) es una película de animación tradicional del año 1970, dirigida por Wolfgang Reitherman y producida por Walt Disney Productions. Es la vigésima película del canon animado de Disney.
+                <br>
+                La película destaca por ser el último largometraje animado aprobado personalmente por Walt Disney antes de su fallecimiento en 1966. 
+                <br>
+                También es el último largometraje animado del estudio que fue producido durante la dirección empresarial de Roy O. Disney antes de su fallecimiento en 1971.
+                <br>
+                Debido a esto, los historiadores suelen considerar a Los Aristogatos como el último largometraje animado original del Disney clásico.2​ Esta película también destaca por su influencia musical del jazz con el arte psicodélico, siendo ambos representados en el ambiente francés de la Belle Époque.
+            </p>
+        </div>
+    </section>
+
+    <!--Personajes -->
+    <section id="personajes" class="bg-gray-200 py-8 px-6 md:px-12">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Personajes Principales</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-2">Duquesa</h3>
+                    <p class="text-gray-700">Duquesa es una sofisticada gata, madre de Marie, Berlioz y Toulouse.</p>
+                    <div class=" flex justify-center">
+                        <img src="./img/duquesa.jpeg" alt="" class="object-center h-80 ">
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-2">Thomas O'Malley</h3>
+                    <p class="text-gray-700">El encantador y muy inteligente gato callejero .</p>
+                    <div class=" flex justify-center">
+                        <img src="./img/O`Mally.jpeg" alt="" class="object-center h-80 ">
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-2">Marie, Berlioz, y Toulouse</h3>
+                    <p class="text-gray-700">Los adorables y traviesos gatitos.</p>
+                    <div class=" flex justify-center">
+                        <img src="./img/ninos.jpeg" alt="" class="object-center h-80 ">
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-2">Madame Adelaide Bonfamille</h3>
+                    <p class="text-gray-700">Es la dueña de Duquesa y sus hijos.</p>
+                    <div class=" flex justify-center">
+                        <img src="./img/madam.jpeg" alt="" class="object-center h-80 ">
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-2">Edgar</h3>
+                    <p class="text-gray-700">Edgar es el villano principal de la película "Los Aristogatos".</p>
+                    <div class=" flex justify-center">
+                        <img src="./img/edgar.jpeg  " alt="" class="object-center h-80 ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="py-8 px-6 md:px-12">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Video Resumen</h2>
+            <div class="flex justify-center">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/JXY4PcjHS8k?si=vi7WqYdtK__jovd6" 
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                    clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>    
+
+    <!-- Datos curiosos -->
+    <section id="characters" class="bg-gray-200 py-8 px-6 md:px-12">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Datos Curiosos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-700">
+                        Se había planeando una secuela para el filme en 2005, cuyo trabajo se había emprendido en 2006, 
+                        pero se canceló para volver a retomar el proyecto en 2007. Actualmente no se sabe nada de la 
+                        supuesta película "Los Aristogatos 2".
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-700">
+                        Los tres gatitos tienen el nombre de tres famosos franceses de la época: Marie Curie (1867-1934); 
+                        Henri de Toulouse-Lautrec (1864-1901) y Louis Hector Berlioz (-803-1869).
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-700">
+                        La película de Los Aristogatos fue la producción número 20 de los estudios Disney, y 
+                        pesar de no ser tan afamada como otras cintas, sin duda es un clásico
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p>&copy; Creado por Nahomi Serrano </p>
+    </footer>
 </body>
 </html>
