@@ -4,8 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios Web II</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+      screens: {
+        sm: '-80px',
+        md: '768px',
+        lg: '976px',
+        xl: '1440px',
+      }
+      }
+        }
+      </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sour Gummy', sans-serif;
+        }
+        h1, h2 {
+            font-family: 'Sour Gummy', cursive;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+    </style>
 </head>
-<body>
-    
+<body class="bg-gray-100 text-gray-800">
+        <!-- Hero-->
+        <section class="relative bg-cover bg-center h-96" style="background-image: url('./Guia1_20235794/desarrollo.jpeg')">
+            <div class="h-full flex items-center justify-center">
+                <h2 class="text-white text-4xl md:text-6xl font-bold">Desarrollo Web II</h2>
+            </div>
+        </section>
+
+    <!-- Sobre la pelicula -->
+    <section id="about" class="py-8 px-6 md:px-12">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4"></h2>
+            <p class="text-lg md:text-xl text-gray-700">
+                Creada con el fin de almacenar las guías correspondientes a la materia de Desarrollo Web II.
+                Nahomi Michelle Serrano Ortiz - ISND - 20235794
+            </p>
+        </div>
+    </section>
+
+    <!--Personajes -->
+    <section id="personajes" class="bg-gray-200 py-8 px-6 md:px-12">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Guías de Desarrollo Web II</h2>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-2">Guia 1</h3>
+                    <p class="text-gray-700">Usar las clases utilitarias de Tailwind CSS para estilizar componentes rápidamente.
+                        Crear diseños responsivos y personalizar configuraciones básicas en proyectos con Tailwind CSS.</p> <br>
+                    <div class=" flex justify-center flex flex-col">
+                        <p><a href="./Guia1_20235794/pricing-card/pricing.html">Tarjetas de precios</a></p>
+                        <p><a href="./Guia1_20235794/producto/producto.html">Producto</a></p>   
+                        <p><a href="./Guia1_20235794/galeria/galeria.html">Galería de imágenes</a></p>   
+                        <p><a href="./Guia1_20235794/login/login.html">Formulario de inicio de sesión</a></p>   
+                        <p><a href="./Guia1_20235794/clipboard/index.html">Clipboard Landing Page</a></p>   
+                        <p><a href="./Guia1_20235794/complemetario/aristogatos.html">Los Aristogatos (complementario)</a></p>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p>&copy; Creado por Nahomi Serrano </p>
+    </footer>
 </body>
 </html>
