@@ -39,7 +39,7 @@ export function useFetchMovies(query){
 
                 //peticion a la api de ombd con la clave de acceso y la consulta
                 const response = await
-                fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`);
+                fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`);
 
                 //verificar si la respuesta HTTP es correcta
                 if(!response.ok)
