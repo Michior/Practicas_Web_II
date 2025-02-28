@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { BudgetForm } from './components/BudgetForm';
 import { BudgetStateContext } from './context/BudgetContext';
+import { BudgetTracker } from './components/BudgetTracker';
 
 export const App = () => {
     const state =useContext(BudgetStateContext)
@@ -15,7 +16,7 @@ export const App = () => {
         </header> 
 
         <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg mt-10 p-10"> 
-            {isValidBudget? <h1>Detalle de gastos</h1> : <BudgetForm/>}
+            {isValidBudget ? <BudgetTracker/> : <BudgetForm/>}
         </div> 
     </>
   )
