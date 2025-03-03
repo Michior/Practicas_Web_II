@@ -2,6 +2,7 @@ import React, { useContext, useMemo } from 'react'
 import { AmountDisplay } from './AmountDisplay'
 import { BudgetDistpatchContext, BudgetStateContext } from '../context/BudgetContext'
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 export const BudgetTracker = () => {
   const state = useContext(BudgetStateContext);
