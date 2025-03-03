@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react' 
+import React, { useContext, useEffect, useMemo, useState } from 'react' 
 import { categories } from '../data/categories' 
 import DatePicker from 'react-date-picker' 
 import 'react-date-picker/dist/DatePicker.css' 
 import 'react-calendar/dist/Calendar.css' 
 import ErrorMessage from './ErrorMessage'
 import { BudgetDistpatchContext, BudgetStateContext } from '../context/BudgetContext'
+import { BudgetTracker } from './BudgetTracker'
 
 export const ExpenseForm = () => {
     const[expense, setExpense] = useState({
@@ -15,8 +16,16 @@ export const ExpenseForm = () => {
     });
 
     const [error, setError] = useState('')
-    const distpatch = useContext(BudgetDistpatchContext)
-    const state = useContext(BudgetStateContext)
+    const distpatch = useContext(BudgetDistpatchContext);
+    const state = useContext(BudgetStateContext);
+
+
+    useEffect(() =>{
+        if(state.editingId){
+            const editingExpense = state.expenses.filter(currentExpense =>currentExpense.id===state.editingId)[0]
+            setExpense(editingExpense)
+        }
+    }, [state.editingId])
 
     const handleChange = (e) => {
         const {name, value } = e.target;
@@ -45,8 +54,17 @@ export const ExpenseForm = () => {
             setError('Todos los campos son Obligatorios')
             return
         }
-        distpatch({type: 'add-expense', payload: {expense}})
-
+        const totalExpenses = state.expenses.reduce((total, exp) => exp.amount + total, 0) + expense.amount;
+        if(totalExpenses > state.budget){
+            setError("Alerta: tus gastos han exedido tu presupuesto");
+            return;
+        }
+        if (state.editingId){
+            distpatch({type: "update-expense", payload: {expense: {id: state.editingId, ...expense}}})
+        }
+        else {
+            distpatch({type: 'add-expense', payload: {expense}})
+        }
         //reiniciar el state/form
         setExpense({
             expenseName: "",
@@ -59,7 +77,7 @@ export const ExpenseForm = () => {
     return(
         <form className='space-y-5' onSubmit={handleSubmit}>
             <legend className='uppercase text-center text-2xl font-black border-b-4 border-blue-500 py-2'>
-                Nuevo Gasto
+                {expense.id? "Guardar cambios" : "Nuevo Gasto"}
             </legend>
 
             {error && <ErrorMessage>{error}</ErrorMessage>}
@@ -130,7 +148,7 @@ export const ExpenseForm = () => {
             <input 
                 type="submit"
                 className='bg-blue-600 cursor-pointer w-full p-2 text-white uppercase font-bold rounded-lg'
-                value="Registrar gasto" 
+                value=  { expense.id? "Guardar Cambios" : "Registrar Gasto" }
             />
         </form>
     )
