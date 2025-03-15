@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useAppStore } from "../store/useAppStore"
+import { useNotification } from "../store/notificationsSlice"
 
 export default function SearchForm() {
     const fetchCategories = useAppStore((state) => state.fetchCategories)
@@ -28,7 +29,7 @@ export default function SearchForm() {
 
         //TODO VALIDAR
         if(Object.values(searchFilters).includes('')){
-            console.log('Todos los campos son obligatorios')
+            useNotification.getState().addNotification('Todos los campos son obligatorios', "error");
             return
         }
 

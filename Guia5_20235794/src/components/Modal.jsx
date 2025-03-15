@@ -81,7 +81,7 @@ export default function Modal() {
                                             closeModal()
                                         }}
                                             className='w-full rounded bg-orange-600 p-3 font-bold uppercase text-white shadow hover:bg-orange-500'>
-                                            {...favoriteExists(selectedRecipe.idDrink) ? 'Eliminar favorito' : 'Agregar a favoritos'}
+                                            {favoriteExists(selectedRecipe.idDrink) ? 'Eliminar favorito' : 'Agregar a favoritos'}
                                         </button>
                                     </div>
 

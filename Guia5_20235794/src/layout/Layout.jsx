@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import { Outlet } from 'react-router'
 import Modal from '../components/Modal'
 import { useAppStore } from '../store/useAppStore'
+import { Notifications } from '../components/Notifications'
 
 export default function Layout() {
   const loadFromStorage = useAppStore((state) => state.loadFromStorage)
@@ -13,6 +14,7 @@ export default function Layout() {
   return (
     <>
         <Header/>
+        <Notifications/>
         <main className='mx-auto container py-16'>
             <Outlet/>
         </main>
